@@ -1,0 +1,30 @@
+This is an experimental and educational work.
+It is good to teach/learn how a compiler works.
+mips compiler is used because of simplicity, so you can better read assembly code
+you can change mips_4KC-cpp with i686-pc-linux-gnu to compile to ia32
+
+
+-preprocessor
+mips_4KC-cpp -I. a.c -o a.i
+
+-compiler
+mips_4KC-gcc -S a.i -o a.s
+
+-assemler
+mips_4KC-as a.s -o a.o
+
+linker
+mips_4KC-ld a.o -o a /opt/eldk/mips_4KC/lib/crt1.o /opt/eldk/mips_4KC/lib/crti.o /opt/eldk/mips_4KC/lib/crtn.o --dynamic-linker /opt/eldk/mips_4KC/lib/ld.so.1 -lc
+
+
+
+LICENSE
+=======
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
